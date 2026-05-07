@@ -1,22 +1,30 @@
 
 import { motion } from 'framer-motion';
 import { ArrowRight } from '@phosphor-icons/react';
+import { Link } from 'react-router-dom';
 
 const products = [
   {
+    id: "airaa",
     img: "/assets/images/airaa-project.png",
     title: "Airaa: STEM Course Website",
-    desc: "An interactive educational platform designed to promote STEM learning. Features course management and progress tracking."
+    desc: "An interactive educational platform designed to promote STEM learning. Features course management, progress tracking, and engaging content for students and educators.",
+    technologies: ["React", "Web Design", "STEM Education", "Educational Tech"],
+    link: "/airaa"
   },
   {
+    id: "iot",
     img: "/assets/images/iot-product.png",
     title: "Nexus IoT Gateway",
-    desc: "Universal industrial gateway supporting LoRaWAN and MQTT for real-time automation and monitoring."
+    desc: "Universal industrial gateway supporting LoRaWAN and MQTT for real-time automation and monitoring.",
+    technologies: ["IoT", "LoRaWAN", "MQTT", "Embedded Systems"]
   },
   {
+    id: "ai",
     img: "/assets/images/ai-dashboard.png",
     title: "Aura AI Analytics",
-    desc: "Advanced predictive maintenance dashboard for monitoring mechanical systems with high precision."
+    desc: "Advanced predictive maintenance dashboard for monitoring mechanical systems with high precision.",
+    technologies: ["AI", "Data Analytics", "React", "Python"]
   }
 ];
 
@@ -56,8 +64,21 @@ const Products = () => {
                 whileHover={{ translateZ: 30 }}
               >
                 <h3>{product.title}</h3>
+                <div className="tech-tags">
+                  {product.technologies?.map((tech, i) => (
+                    <span key={i} className="tech-tag">{tech}</span>
+                  ))}
+                </div>
                 <p>{product.desc}</p>
-                <a href="#" className="learn-more">Learn More <ArrowRight size={18} /></a>
+                {product.link ? (
+                  <Link to={product.link} className="learn-more">
+                    Learn More <ArrowRight size={18} />
+                  </Link>
+                ) : (
+                  <div className="learn-more disabled">
+                    Learn More <ArrowRight size={18} />
+                  </div>
+                )}
               </motion.div>
             </motion.div>
           ))}
