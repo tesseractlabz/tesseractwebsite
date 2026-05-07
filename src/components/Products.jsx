@@ -35,17 +35,30 @@ const Products = () => {
               className="product-card"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ 
+                scale: 1.05, 
+                rotateX: 2, 
+                rotateY: 2,
+                transition: { duration: 0.3 }
+              }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
+              style={{ transformStyle: 'preserve-3d', perspective: '1000px' }}
             >
-              <div className="product-img">
+              <motion.div 
+                className="product-img"
+                whileHover={{ translateZ: 50 }}
+              >
                 <img src={product.img} alt={product.title} />
-              </div>
-              <div className="product-info">
+              </motion.div>
+              <motion.div 
+                className="product-info"
+                whileHover={{ translateZ: 30 }}
+              >
                 <h3>{product.title}</h3>
                 <p>{product.desc}</p>
                 <a href="#" className="learn-more">Learn More <ArrowRight size={18} /></a>
-              </div>
+              </motion.div>
             </motion.div>
           ))}
         </div>

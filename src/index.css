@@ -167,16 +167,15 @@ ul {
 }
 
 .logo img {
-    height: 70px;
+    height: 100px;
     width: auto;
     display: block;
     flex-shrink: 0;
     margin: 0;
-    /* Reset margins for the new logo */
 }
 
 #navbar.scrolled .logo img {
-    height: 55px;
+    height: 70px;
     margin: 0;
 }
 
@@ -189,17 +188,19 @@ ul {
 
 .brand-main {
     font-family: 'Poppins', sans-serif;
-    font-size: 1.15rem;
+    font-size: 1.8rem;
     font-weight: 700;
-    color: var(--primary);
+    color: var(--secondary);
+    /* Vibrant teal for Tesseract */
     letter-spacing: 0.02em;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .brand-sub {
     font-family: 'Poppins', sans-serif;
-    font-size: 0.7rem;
+    font-size: 1rem;
     font-weight: 500;
-    color: var(--secondary);
+    color: var(--white);
     letter-spacing: 0.18em;
     text-transform: uppercase;
 }
@@ -209,8 +210,10 @@ footer .brand-main {
 }
 
 footer .brand-sub {
-    color: var(--accent);
+    color: var(--secondary);
+    opacity: 1;
 }
+
 
 .nav-links {
     display: flex;
@@ -219,10 +222,26 @@ footer .brand-sub {
 }
 
 .nav-links a:not(.btn) {
-    font-weight: 500;
-    color: var(--text-main);
+    font-weight: 600;
+    color: var(--white);
     position: relative;
     padding: 5px 0;
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+    letter-spacing: 0.03em;
+}
+
+#navbar.scrolled .nav-links a:not(.btn) {
+    color: var(--text-main);
+    text-shadow: none;
+}
+
+#navbar.scrolled .brand-main {
+    color: var(--primary);
+    text-shadow: none;
+}
+
+#navbar.scrolled .brand-sub {
+    color: var(--secondary);
 }
 
 .nav-links a:not(.btn)::after {
@@ -232,8 +251,12 @@ footer .brand-sub {
     left: 0;
     width: 0;
     height: 2px;
-    background-color: var(--primary);
+    background-color: var(--accent);
     transition: var(--transition);
+}
+
+#navbar.scrolled .nav-links a:not(.btn)::after {
+    background-color: var(--primary);
 }
 
 .nav-links a:not(.btn):hover::after,
@@ -248,11 +271,16 @@ footer .brand-sub {
 
 .mobile-menu-btn {
     display: none;
-    font-size: 2rem;
+    font-size: 2.5rem;
     background: none;
     border: none;
-    color: var(--primary);
+    color: var(--white);
     cursor: pointer;
+    transition: var(--transition);
+}
+
+#navbar.scrolled .mobile-menu-btn {
+    color: var(--primary);
 }
 
 /* Hero Section */
@@ -262,11 +290,31 @@ footer .brand-sub {
     display: flex;
     align-items: center;
     overflow: hidden;
+    color: var(--white);
 }
 
-.hero-spline {
+.hero-video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 100vh;
+    height: 100%;
+    z-index: -1;
+}
+
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 100%);
 }
 
 .hero-bg {
@@ -320,10 +368,10 @@ footer .brand-sub {
 
 
 .hero-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    position: relative;
+    z-index: 1;
+    display: flex;
     align-items: center;
-    gap: 4rem;
 }
 
 .badge {
@@ -345,7 +393,9 @@ footer .brand-sub {
 
 .hero-text h1 span {
     color: var(--secondary);
-    display: block;
+    display: inline-block;
+    margin-top: 0.5rem;
+    text-shadow: 0 0 15px rgba(8, 131, 149, 0.5);
 }
 
 .hero-text p {
@@ -474,13 +524,15 @@ footer .brand-sub {
 .image-wrapper {
     position: relative;
     border-radius: 24px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    transition: all 0.5s ease;
+    background: var(--white);
 }
 
 .image-wrapper img {
     width: 100%;
     display: block;
+    border-radius: 24px;
 }
 
 .check-list {
@@ -512,7 +564,6 @@ footer .brand-sub {
 .service-card:hover {
     transform: translateY(-12px);
     box-shadow: 0 20px 40px rgba(9, 99, 126, 0.1);
-    border-top-color: var(--secondary);
 }
 
 .icon-box {
@@ -543,13 +594,15 @@ footer .brand-sub {
     background: var(--white);
     border-radius: 24px;
     overflow: hidden;
-    transition: var(--transition);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    position: relative;
+    transform-style: preserve-3d;
 }
 
 .product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
 }
 
 .product-img {
@@ -1017,5 +1070,103 @@ footer {
     .float-card {
         padding: 1rem;
         font-size: 0.8rem;
+    }
+}
+
+/* Contact Section Electronic Circuit Effect */
+.circuit-section {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.circuit-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    background-color: var(--white);
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 10 H90 V90 H10 Z' fill='none' stroke='rgba(9, 99, 126, 0.08)' stroke-width='0.5'/%3E%3Ccircle cx='10' cy='10' r='1.5' fill='rgba(9, 99, 126, 0.15)'/%3E%3Ccircle cx='90' cy='10' r='1.5' fill='rgba(9, 99, 126, 0.15)'/%3E%3Ccircle cx='90' cy='90' r='1.5' fill='rgba(9, 99, 126, 0.15)'/%3E%3Ccircle cx='10' cy='90' r='1.5' fill='rgba(9, 99, 126, 0.15)'/%3E%3Cpath d='M50 10 V30 M50 70 V90 M10 50 H30 M70 50 H90' stroke='rgba(9, 99, 126, 0.1)' stroke-width='0.5'/%3E%3C/svg%3E");
+    background-size: 150px 150px;
+}
+
+.circuit-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20 L60 20 L60 60 L100 60 L100 100 L140 100 L140 140 L180 140' fill='none' stroke='rgba(8, 131, 149, 0.2)' stroke-width='1'/%3E%3Ccircle cx='20' cy='20' r='3' fill='rgba(8, 131, 149, 0.3)'/%3E%3Ccircle cx='180' cy='140' r='3' fill='rgba(8, 131, 149, 0.3)'/%3E%3C/svg%3E");
+    opacity: 0.4;
+}
+
+/* Flowing Pulse Animation */
+.circuit-overlay::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(8, 131, 149, 0.2) 0%, transparent 70%);
+    background-size: 300% 300%;
+    animation: electronicPulse 10s ease infinite;
+}
+
+/* Individual current sparks */
+.circuit-section::before,
+.circuit-section::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--secondary), transparent);
+    z-index: -1;
+    opacity: 0.6;
+}
+
+.circuit-section::before {
+    top: 20%;
+    left: -100px;
+    animation: sparkFlow 5s linear infinite;
+}
+
+.circuit-section::after {
+    bottom: 30%;
+    right: -100px;
+    animation: sparkFlow 7s linear infinite reverse;
+}
+
+@keyframes electronicPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: scale(1.5);
+        opacity: 0.6;
+    }
+}
+
+@keyframes sparkFlow {
+    0% {
+        left: -10%;
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        left: 110%;
+        opacity: 0;
     }
 }

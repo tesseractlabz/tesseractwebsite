@@ -70,7 +70,8 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="section bg-light">
+    <section id="contact" className="section bg-white circuit-section">
+      <div className="circuit-overlay"></div>
 
       {/* Toast Notification */}
       <AnimatePresence>

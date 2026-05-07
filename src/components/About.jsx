@@ -13,9 +13,26 @@ const About = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="image-wrapper">
-            <img src="/assets/images/embedded-hardware.png" alt="Tesseract Hardware" />
-          </div>
+          <motion.div 
+            className="image-wrapper"
+            whileHover={{ 
+              rotateX: 10, 
+              rotateY: -10, 
+              scale: 1.05,
+              transition: { duration: 0.4 }
+            }}
+            style={{ 
+              transformStyle: 'preserve-3d', 
+              perspective: '1000px',
+              boxShadow: '0 40px 100px rgba(0,0,0,0.3)' // Maximized outer shadow
+            }}
+          >
+            <motion.img 
+              src="/assets/images/embedded-hardware.png" 
+              alt="Tesseract Hardware" 
+              whileHover={{ translateZ: 40 }}
+            />
+          </motion.div>
         </motion.div>
         <motion.div 
           className="about-text"
