@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
-import { List } from '@phosphor-icons/react';
+import { List, X } from '@phosphor-icons/react';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('');
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,19 +29,24 @@ const Navbar = () => {
 
   const handleLinkClick = (section) => {
     setActiveSection(section);
+    setIsMenuOpen(false);
+  };
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-    <nav id="navbar" className={scrolled ? 'scrolled' : ''}>
+    <nav id="navbar" className={`${scrolled ? 'scrolled' : ''} ${isMenuOpen ? 'mobile-active' : ''}`}>
       <div className="container nav-content">
-        <a href="#" className="logo" onClick={() => handleLinkClick('')}>
+        <a href="#" className="logo" onClick={() => handleLinkClick('')}> 
           <img src="/assets/images/logo.png" alt="Tesseract Logo" />
           <span className="brand-name">
-            <span className="brand-main">Tesseract</span>
-            <span className="brand-sub">Labz</span>
+            <span className="brand-first">Tesseract</span>
+            <span className="brand-second">Labz</span>
           </span>
         </a>
-        <ul className="nav-links">
+        <ul className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
           <li>
             <a 
               href="#about" 
@@ -71,8 +77,8 @@ const Navbar = () => {
           </li>
           <li><a href="#contact" className="btn btn-primary nav-get-started" onClick={() => handleLinkClick('contact')}>Get Started</a></li>
         </ul>
-        <button className="mobile-menu-btn">
-          <List size={32} weight="bold" />
+        <button className="mobile-menu-btn" onClick={toggleMenu} aria-label="Toggle Menu">
+          {isMenuOpen ? <X size={32} weight="bold" /> : <List size={32} weight="bold" />}
         </button>
       </div>
     </nav>
