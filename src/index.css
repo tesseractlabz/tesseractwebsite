@@ -1029,15 +1029,16 @@ footer {
 
     .hero-content {
         grid-template-columns: 1fr;
-        text-align: center;
+        text-align: left;
     }
 
     .hero-text h1 {
         font-size: 3rem;
+        font-weight: 800; /* Bolder like reference */
     }
 
     .hero-btns {
-        justify-content: center;
+        justify-content: flex-start;
     }
 
     .hero-visual {
@@ -1116,10 +1117,12 @@ footer {
     .hero-btns {
         flex-direction: column;
         width: 100%;
+        align-items: flex-start;
     }
 
     .hero-btns .btn {
-        width: 100%;
+        width: fit-content;
+        min-width: 200px;
     }
 
     .footer-grid {
