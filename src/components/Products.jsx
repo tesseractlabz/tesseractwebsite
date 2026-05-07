@@ -4,19 +4,19 @@ import { ArrowRight } from '@phosphor-icons/react';
 
 const products = [
   {
+    img: "/assets/images/airaa-project.png",
+    title: "Airaa: STEM Course Website",
+    desc: "An interactive educational platform designed to promote STEM learning. Features course management and progress tracking."
+  },
+  {
     img: "/assets/images/iot-product.png",
-    title: "Nexus Gateway",
-    desc: "Universal IoT gateway supporting LoRaWAN, MQTT, and Zigbee protocols."
+    title: "Nexus IoT Gateway",
+    desc: "Universal industrial gateway supporting LoRaWAN and MQTT for real-time automation and monitoring."
   },
   {
     img: "/assets/images/ai-dashboard.png",
     title: "Aura AI Analytics",
-    desc: "Advanced predictive maintenance and real-time automation dashboard."
-  },
-  {
-    img: "/assets/images/embedded-hardware.png",
-    title: "Titan Embedded Module",
-    desc: "Ultra-low power processing unit for edge computing and industrial use."
+    desc: "Advanced predictive maintenance dashboard for monitoring mechanical systems with high precision."
   }
 ];
 
