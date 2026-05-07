@@ -2,6 +2,7 @@
 :root {
     --primary: #09637E;
     --secondary: #088395;
+    --brand-cyan: #00d1ff; /* Bright Cyan from logo */
     --accent: #7AB2B2;
     --bg-light: #EBF4F6;
     --white: #ffffff;
@@ -110,25 +111,26 @@ ul {
 }
 
 .btn-primary {
-    background-color: var(--primary);
-    color: var(--white);
+    background-color: var(--brand-cyan);
+    color: var(--dark); /* Better contrast with bright cyan */
 }
 
 .btn-primary:hover {
-    background-color: var(--secondary);
+    background-color: var(--white);
+    color: var(--primary);
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(9, 99, 126, 0.2);
+    box-shadow: 0 10px 20px rgba(0, 209, 255, 0.3);
 }
 
 .btn-outline {
     background-color: transparent;
-    border: 2px solid var(--primary);
-    color: var(--primary);
+    border: 2px solid var(--brand-cyan);
+    color: var(--brand-cyan);
 }
 
 .btn-outline:hover {
-    background-color: var(--primary);
-    color: var(--white);
+    background-color: var(--brand-cyan);
+    color: var(--dark);
     transform: translateY(-2px);
 }
 
@@ -398,10 +400,10 @@ footer .brand-sub {
 }
 
 .hero-text h1 span {
-    color: var(--secondary);
+    color: var(--brand-cyan);
     display: inline-block;
     margin-top: 0.5rem;
-    text-shadow: 0 0 15px rgba(8, 131, 149, 0.5);
+    text-shadow: 0 0 15px rgba(0, 209, 255, 0.5);
 }
 
 .hero-text p {

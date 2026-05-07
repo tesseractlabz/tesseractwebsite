@@ -22,7 +22,7 @@ const Hero = () => {
         <div className="hero-text animate-fade-in">
           <span className="badge">Innovation at its Peak</span>
           <h1>Engineering the Future with <span>IoT & Software</span></h1>
-          <p>We build smart solutions for a connected world. From embedded systems to AI-driven automation, <span style={{ color: 'var(--secondary)', fontWeight: '700', textShadow: '0 0 10px rgba(8, 131, 149, 0.4)' }}>Tesseract</span> turns complex ideas into scalable reality.</p>
+          <p>We build smart solutions for a connected world. From embedded systems to AI-driven automation, <span style={{ color: 'var(--brand-cyan)', fontWeight: '700', textShadow: '0 0 10px rgba(0, 209, 255, 0.4)' }}>Tesseract</span> turns complex ideas into scalable reality.</p>
           <div className="hero-btns">
             <a href="#contact" className="btn btn-primary">Get Started</a>
             <a href="#products" className="btn btn-outline">
