@@ -46,7 +46,7 @@ const AiraaPage = () => {
         </motion.div>
       </section>
 
-      <section className="airaa-content">
+      <section className="airaa-content product-content section">
         <div className="container">
           <div className="airaa-details-full">
             <motion.div 
