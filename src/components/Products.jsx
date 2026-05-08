@@ -8,7 +8,7 @@ const products = [
     id: "airaa",
     img: "/assets/images/airaa-project.png",
     title: "Airaa: STEM Course Website",
-    desc: "An interactive educational platform designed to promote STEM learning. Features course management, progress tracking, and engaging content for students and educators.",
+    desc: "An interactive educational platform designed to promote STEM learning.",
     technologies: ["React", "Web Design", "STEM Education", "Educational Tech"],
     link: "/airaa"
   },

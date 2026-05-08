@@ -614,7 +614,7 @@ footer .brand-sub {
 }
 
 .product-img {
-    height: 250px;
+    height: 200px;
     background: #f8f8f8;
     display: flex;
     align-items: center;
@@ -634,7 +634,7 @@ footer .brand-sub {
 }
 
 .product-info {
-    padding: 2rem;
+    padding: 1.5rem;
 }
 
 .product-info h3 {
@@ -644,7 +644,7 @@ footer .brand-sub {
 .product-info p {
     color: var(--text-muted);
     font-size: 0.9rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .learn-more {

@@ -58,8 +58,6 @@ const AiraaPage = () => {
               <h3>Overview</h3>
               <p>
                 An interactive educational platform designed to promote STEM learning. 
-                Features course management, progress tracking, and engaging content 
-                for students and educators.
               </p>
             </motion.div>
 
