@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Envelope, Phone, MapTrifold, CheckCircle, WarningCircle, PaperPlaneTilt } from '@phosphor-icons/react';
+import { Envelope, Phone, CheckCircle, WarningCircle, PaperPlaneTilt } from '@phosphor-icons/react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', country: '', address: '', message: '' });
@@ -116,10 +116,6 @@ const Contact = () => {
                 <Phone size={24} />
                 <a href="tel:0762620233">0762620233</a>
               </div>
-            </div>
-            <div className="map-placeholder glass">
-              <MapTrifold size={40} />
-              <span>Map View</span>
             </div>
           </motion.div>
           <motion.div 
