@@ -47,7 +47,7 @@ const products = [
   },
   {
     id: "tower-pulse",
-    img: "/assets/images/watch1.jpeg",
+    img: "/assets/images/tower-pulse-ai.png",
     title: "Tower Pulse: Monitoring System",
     desc: "Real-time structural health and pulse monitoring for telecommunication towers.",
     technologies: ["IoT", "Sensors", "Real-time Data", "Cloud"],

@@ -4,7 +4,7 @@ import { ArrowLeft, Broadcast, Warning, Pulse, PlugsConnected, CaretUp, CaretDow
 import { Link } from 'react-router-dom';
 
 const galleryImages = [
-  { id: 1, src: "/assets/images/watch1.jpeg", title: "Real-time Pulse" },
+  { id: 1, src: "/assets/images/tower-pulse-ai.png", title: "Real-time Pulse" },
   { id: 2, src: "/assets/images/w3.jpeg", title: "Tower Health" },
   { id: 3, src: "/assets/images/w4.jpeg", title: "Sensor Grid" },
   { id: 4, src: "/assets/images/w5.jpeg", title: "Monitoring Dashboard" },
